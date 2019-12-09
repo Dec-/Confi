@@ -12,7 +12,7 @@ const port: number = 3001;
 const config = {
     mailserver: {
         auth: {
-            pass: process.env.SMTP_PASSWORD,
+            pass: process.env.SMTP_PASSWORD || "Confi123.",
             user: "my.confi.app@gmail.com",
         },
         host: "smtp.googlemail.com",

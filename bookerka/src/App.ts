@@ -1,6 +1,7 @@
 import * as bodyParser from "body-parser";
 import * as express from "express";
 import { check, validationResult } from "express-validator";
+import * as rp from "request-promise";
 import Dao from "./Dao";
 import User from "./Modal/User";
 import Util from "./Util";
@@ -49,9 +50,20 @@ router.post("/conferences/:id/book", [
         return res.status(422).json({ errors: errors.array() });
     }
     try {
+        //TODO rollback if needed (rp error)
         await Dao.insertIntoBookings(new User(req.body.firstname, req.body.lastname,
             req.body.email, req.body.phoneNumber), Number(req.params.id));
-        res.status(201).json();
+
+        const options = {
+            method: "POST",
+            uri: "http://localhost:3001/api/mail/send",
+            body: {
+                email: req.body.email
+            },
+            json: true
+        };
+        const code = await rp(options);        
+        res.status(201).json({code: code});
     } catch (error) {
         console.error(error);
         res.status(500).send("Whoops, something went wrong...Unexpected Error");
