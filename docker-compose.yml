@@ -1,0 +1,19 @@
+version: "3"
+services:
+  mailerka:
+     container_name: mailerka
+     image: filip/mailerka:latest
+     build: ./mailerka
+     restart: always
+     ports:
+      - "3001:3001"
+     environment:
+       SMTP_PASSWORD: Confi123.
+  db:
+    container_name: postgre
+    image: postgres:12.1-alpine
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: confi123
