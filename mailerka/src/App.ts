@@ -12,13 +12,13 @@ const port: number = 3001;
 const config = {
     mailserver: {
         auth: {
-            pass: "****",
+            pass: process.env.SMTP_PASSWORD,
             user: "my.confi.app@gmail.com",
         },
         host: "smtp.googlemail.com",
         port: 465,
         secure: true,
-    }
+    },
 };
 
 const transporter = nodemailer.createTransport(config.mailserver);

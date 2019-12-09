@@ -2,8 +2,9 @@
     "compilerOptions": {
       "sourceMap": true,
       "target": "es5",
-      "outDir": "./dist",
-      "baseUrl": "./src"
+      "outDir": "./build",
+      "baseUrl": "./src",
+      "skipLibCheck": true
     },
     "include": [
       "src/**/*.ts"
