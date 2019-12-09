@@ -8,13 +8,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Prerequisites
 
+* Linux
 * Git
 * Docker
 
 ## Run
 
 ```
-docker....
+docker-compose build
+docker-compose up
 ```
 
 ## Author
