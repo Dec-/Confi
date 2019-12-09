@@ -1,5 +1,13 @@
 version: "3"
 services:
+  bookerka:
+     container_name: bookerka
+     image: filip/bookerka:latest
+     build: ./bookerka
+     restart: always
+     ports:
+      - "3000:3000"
+     network_mode: host
   mailerka:
      container_name: mailerka
      image: filip/mailerka:latest
@@ -9,6 +17,7 @@ services:
       - "3001:3001"
      environment:
        SMTP_PASSWORD: Confi123.
+     network_mode: host
   db:
     container_name: postgre
     image: postgres:12.1-alpine
@@ -17,3 +26,4 @@ services:
       - 5432:5432
     environment:
       POSTGRES_PASSWORD: confi123
+    network_mode: host

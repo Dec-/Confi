@@ -1,9 +1,9 @@
 import * as bodyParser from "body-parser";
 import * as express from "express";
 import { check, validationResult } from "express-validator";
-import Dao from "../src/Dao";
-import User from "../src/Modal/User";
-import Util from "../src/Util";
+import Dao from "./Dao";
+import User from "./Modal/User";
+import Util from "./Util";
 
 const app = express();
 const router = express.Router();

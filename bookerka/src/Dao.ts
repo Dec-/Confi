@@ -1,12 +1,15 @@
-import User from "Modal/User";
 import { Pool, PoolClient } from "pg";
+import User from "./Modal/User";
 
 const pool = new Pool({
     database: "postgres",
-    max: 10,
     password: "confi123",
-    user: "postgres",
+    host: "localhost",
+    port: 5432,
+    user: "postgres"
 });
+
+console.log(pool)
 
 pool.on("error", (err, client) => {
     console.error("Unexpected error on idle client", err);
