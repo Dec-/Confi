@@ -1,5 +1,13 @@
 version: "3"
 services:
+  frontica:
+     container_name: frontica
+     image: filip/frontica:latest
+     build: ./frontica
+     restart: always
+     ports:
+      - "4200:4200"
+     network_mode: host
   bookerka:
      container_name: bookerka
      image: filip/bookerka:latest
