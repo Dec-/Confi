@@ -1,0 +1,9 @@
+mat-form-field {
+    flex: 1 1 40%;
+    min-width: 100px;
+    margin-right: 16px;
+}
+div.input-align {
+    display: flex;
+    flex-wrap: wrap;
+}

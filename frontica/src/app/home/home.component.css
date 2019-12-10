@@ -1,0 +1,13 @@
+mat-card {
+    max-width: 60%;
+    margin: 20px auto;
+}
+mat-list-item {
+    display: flex;
+}
+mat-list-item h3 {
+    flex: 1 1 50%;
+}
+mat-list-item h2 {
+    flex: 1 1 50%;
+}

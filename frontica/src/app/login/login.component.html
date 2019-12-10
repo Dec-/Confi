@@ -1,0 +1,21 @@
+<mat-card>
+    <form class="checkIn-form" #form="ngForm">
+        <mat-form-field>
+            <input matInput class="form-control" placeholder="Korisničko ime" required minlength="4" type="text"
+                [(ngModel)]="loginData.username" name="username">
+            <mat-icon matPrefix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput class="form-control" placeholder="Lozinka" required minlength="4" type="password"
+                [(ngModel)]="loginData.password" name="password">
+        </mat-form-field>
+
+        <div *ngIf="form.touched && form.invalid" color="danger">
+            Sva polja su obavezna.
+        </div>
+
+        <button mat-button type="submit" [disabled]="form.invalid" (click)="logIn(loginData)" color="primary">
+            <mat-icon>input</mat-icon> Prijavi se
+        </button>
+    </form>
+</mat-card>

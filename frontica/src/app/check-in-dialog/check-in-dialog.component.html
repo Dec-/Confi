@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Prijavi se na {{data.name}} konferenciju</h2>
+<form class="checkIn-form" #form="ngForm">
+    <mat-dialog-content>
+        <div class="input-align">
+            <mat-form-field>
+                <input matInput class="form-control" placeholder="Ime" required minlength="4" type="text"
+                    [(ngModel)]="user.firstname" name="firstname">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput class="form-control" placeholder="Prezime" required minlength="4" type="text"
+                    [(ngModel)]="user.lastname" name="lastname">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput class="form-control" placeholder="Email" required minlength="4" type="email"
+                    [(ngModel)]="user.email" name="email">
+                <mat-icon matPrefix>email</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput class="form-control" placeholder="Telefon" required minlength="4" type="tel"
+                    [(ngModel)]="user.phoneNumber" name="phoneNumber">
+                <mat-icon matPrefix>local_phone</mat-icon>
+            </mat-form-field>
+        </div>
+        <div *ngIf="form.touched && form.invalid" color="danger">
+            Sva polja su obavezna.
+        </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button mat-button type="submit" [disabled]="form.invalid" (click)="userCheckIn(user)" color="primary">
+            <mat-icon>input</mat-icon> Prijavi se
+        </button>
+    </mat-dialog-actions>
+</form>

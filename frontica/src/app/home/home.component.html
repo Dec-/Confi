@@ -1,0 +1,16 @@
+<mat-card>
+    {{isAdmin}}
+    <mat-list role="list">
+        <mat-list-item *ngFor="let conference of (conferenceList | async) last as last"
+            (click)="openDialog(conference)">
+            <h3 matSubheader>
+                <mat-icon color="accent">meeting_room</mat-icon>
+                <span>{{conference.room}}</span>
+            </h3>
+            <h2 matSubheader>{{conference.name}}</h2>
+
+            <mat-divider *ngIf="!last"></mat-divider>
+        </mat-list-item>
+
+    </mat-list>
+</mat-card>

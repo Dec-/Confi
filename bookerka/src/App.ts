@@ -2,13 +2,16 @@ import * as bodyParser from "body-parser";
 import * as express from "express";
 import { check, validationResult } from "express-validator";
 import * as rp from "request-promise";
+import * as cors from "cors";
 import Dao from "./Dao";
 import User from "./Modal/User";
 import Util from "./Util";
 
 const app = express();
+
 const router = express.Router();
 const port: number = 3000;
+router.use(cors());
 
 app.use(bodyParser.json());
 app.use("/api", router);
