@@ -154,7 +154,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"username\": \"Jon\",\n\t\"password\": \"Doe\",\n\t\"email\": \"jon.do4e@gmail.com\",\n\t\"phoneNumber\": \"+23 1232 12312\"\n}",
+					"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"admin123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
