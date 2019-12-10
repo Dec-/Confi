@@ -19,6 +19,20 @@ docker-compose build
 docker-compose up
 ```
 
+Open browser on port 4200 and ejoy :)
+
+### Mac & Windows
+
+Command docker-compose up is not fully working on Mac and Windows beacuase of networking issues...
+
+For Mac and W use:
+
+```
+docker-compose up postgre
+```
+
+And ng serve frontica & npm start dev bookerka/mailerka
+
 ## Author
 
 * **Filip Kaić** - *Initial work*
